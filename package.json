@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "prod": "webpack --mode production",
+    "build": "webpack --mode development",
+    "start": "webpack --mode development && node dist/main.js"
+  },
   "dependencies": {
     "express": "^4.16.4",
     "vue": "^2.6.10"
