@@ -13,11 +13,14 @@ const server = {
           loader: 'ts-loader',
           options: { configFile: 'tsconfig.server.json' }
         },
-        exclude: /node_modules/
+        include: path.resolve(__dirname, 'src', 'server')
       }
     ]
   },
-  resolve: { extensions: ['.ts', '.js'] },
+  resolve: {
+    extensions: ['.ts'],
+    symlinks: false
+  },
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist')
@@ -34,11 +37,14 @@ const browser = {
           loader: 'ts-loader',
           options: { configFile: 'tsconfig.browser.json' }
         },
-        exclude: /node_modules/
+        include: path.resolve(__dirname, 'src', 'browser')
       }
     ]
   },
-  resolve: { extensions: ['.ts', '.js'] },
+  resolve: {
+    extensions: ['.ts'],
+    symlinks: false
+  },
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'public', 'js')
